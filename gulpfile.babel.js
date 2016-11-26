@@ -10,15 +10,15 @@ const stream = browserSync.stream;
 const spawn = childProcess.spawn;
 
   gulp.task('styles', () => {
-	return gulp.src('_sass/*.scss')
-		.pipe($.plumber())
-		.pipe($.sourcemaps.init())
-		.pipe(
+		return gulp.src('_assets/stylesheets/*.scss')
+			.pipe($.plumber())
+			.pipe($.sourcemaps.init())
+			.pipe(
 			$.sass.sync({
 				outputStyle: 'compressed',
 				precision: 10,
 				includePaths: ['.']
-			}).on('error', function(error) {
+			}).on('error', function (error) {
 				// notifier.notify({
 				// 	title: 'SASS error',
 				// 	message: error.message
@@ -26,16 +26,16 @@ const spawn = childProcess.spawn;
 				console.log('\n   ---- SASS error ----');
 				console.log(error.message);
 			})
-		)
-		.pipe($.autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'Firefox ESR'] }))
-		// .pipe($.sourcemaps.write())
-		.pipe(gulp.dest('.tmp/public/css/'))
-		.pipe(stream())
-		.pipe(gulp.dest('public/css/'))
-		.pipe($.notify({
-			title: 'Jekyll',
-			message: 'CSS generated'
-		}));
+			)
+			.pipe($.autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'Firefox ESR'] }))
+			// .pipe($.sourcemaps.write())
+			.pipe(gulp.dest('.tmp/public/css/'))
+			.pipe(stream())
+			.pipe(gulp.dest('public/css/'));
+		// .pipe($.notify({
+		// 	title: 'Jekyll',
+		// 	message: 'CSS generated'
+		// }));
 });
 
 gulp.task('scripts', () => {
@@ -50,7 +50,7 @@ gulp.task('scripts', () => {
 });
 
 gulp.task('jekyll', function (){
-	const jekyll = spawn('jekyll', ['serve', '--incremental'], { stdio: 'inherit' });
+	const jekyll = spawn('jekyll', ['serve'], { stdio: 'inherit' });
 
 	jekyll.on('exit', function(code) {
 		if (code !== 0) {
@@ -86,8 +86,8 @@ gulp.task('serve', ['jekyll', 'styles', 'scripts'], () => {
     }, 50);
 	});
 
-	gulp.watch('_sass/**/*.scss', ['styles']);
-	gulp.watch('_js/**/*.js', ['scripts']);
+	gulp.watch('_assets/stylesheets/**/*.scss', ['styles']);
+	gulp.watch('_assets/javascripts/**/*.js', ['scripts']);
 	// gulp.watch('app/fonts/**/*', ['fonts']);
 });
 

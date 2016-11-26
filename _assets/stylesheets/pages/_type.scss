@@ -30,7 +30,7 @@ $header-font-family: "Roboto Mono", "Helvetica", Helvetica, Arial, sans-serif !d
 $header-font-weight: 500 !default;
 $header-font-style: normal !default;
 $header-font-color: #222 !default;
-$header-line-height: 1.4 !default;
+$header-line-height: 1.5 !default;
 $header-top-margin: .2em !default;
 $header-bottom-margin: .5em !default;
 $header-text-rendering: optimizeLegibility !default;
@@ -202,11 +202,11 @@ $microformat-abbr-font-decoration: none !default;
     font-family: $header-font-family;
     font-weight: $header-font-weight;
     font-style: $header-font-style;
-    color: $header-font-color;
+    // color: $header-font-color;
     text-rendering: $header-text-rendering;
     margin-top: $header-top-margin;
     margin-bottom: $header-bottom-margin;
-    line-height: $header-line-height - em-calc(3);
+    line-height: $header-line-height;
     letter-spacing: -0.02em;
 
     small {

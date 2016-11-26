@@ -32,7 +32,7 @@ inc:
 
   # Google Fonts
   # eg. 'Droid+Sans:400,700|Droid+Serif:400,700'
-  google_font: 'Roboto+Slab:400,700|Roboto:400,700'
+  google_font: 'Roboto+Mono:300,400|Roboto:300,400,700'
 
   # Setup your fonts, colors etc at _assets/stylesheets/main.scss
 
@@ -72,7 +72,7 @@ markdown:      kramdown
 markdown_ext:  markdown,mkd,mkdn,md
 textile_ext:   textile
 
-excerpt_separator: "<!-- more -->"
+excerpt_separator: "<!--more-->"
 
 safe:        false
 host:        0.0.0.0
