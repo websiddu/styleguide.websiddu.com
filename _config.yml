@@ -7,6 +7,8 @@ branch:               master
 source:               .
 destination:          _site
 
+port: 4002
+
 inc:
   # Blog Information
   title:        "Siddhartha Gudipati"
