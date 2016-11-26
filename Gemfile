@@ -1,5 +1,11 @@
-source "http://production.cf.rubygems.org/"
+source 'https://rubygems.org'
 
-gem "rake", "~> 10.1.1"
+gem 'jekyll'
+gem 'jekyll-assets'
 gem "jekyll-paginate"
 gem "jekyll-archives"
+gem 'kramdown'
+gem 'rake'
+gem 'sass'
+gem 'uglifier'
+gem 'github-pages'
