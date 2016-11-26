@@ -1,6 +1,6 @@
 # GitHub
 username:             websiddu
-repo:                 blog.websiddu.com
+repo:                 styleguide.websiddu.com
 branch:               master
 
 # Jekyll source / destination
@@ -10,7 +10,7 @@ destination:          _site
 inc:
   # Blog Information
   title:        "Siddhartha Gudipati"
-  subtitle:     "The photos and travel"
+  subtitle:     "Styleguide for websiddu.com website"
   cover_image:  blog-cover.jpg
   logo:         logo.png
 
