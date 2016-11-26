@@ -1,28 +1,25 @@
----
-layout: null
----
-
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>{{ site.title }}</title>
- <link href="{{ site.url }}{{ site.baseurl }}/atom.xml" rel="self"/>
- <link href="{{ site.url }}{{ site.baseurl }}/"/>
- <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>{{ site.url }}</id>
+ <title></title>
+ <link href="http://0.0.0.0:4000//atom.xml" rel="self"/>
+ <link href="http://0.0.0.0:4000//"/>
+ <updated>2016-11-26T21:49:48+00:00</updated>
+ <id>http://0.0.0.0:4000</id>
  <author>
-   <name>{{ site.author.name }}</name>
-   <email>{{ site.author.email }}</email>
+   <name></name>
+   <email></email>
  </author>
 
- {% for post in site.posts %}
+ 
  <entry>
-   <title>{{ post.title }}</title>
-   <link href="{{ site.url }}{{ post.url }}"/>
-   <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>{{ site.url }}{{ site.baseurl }}{{ post.id }}</id>
-   <content type="html">{{ post.content | xml_escape }}</content>
+   <title>Typography</title>
+   <link href="http://0.0.0.0:4000/typography.html"/>
+   <updated>2016-02-19T00:00:00+00:00</updated>
+   <id>http://0.0.0.0:4000//typography</id>
+   <content type="html">&lt;h2 id=&quot;this-is-heading-1&quot;&gt;This is heading 1&lt;/h2&gt;
+</content>
  </entry>
- {% endfor %}
+ 
 
 </feed>
