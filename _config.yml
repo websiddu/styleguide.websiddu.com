@@ -1,7 +1,7 @@
 # GitHub
 username:             websiddu
 repo:                 blog.websiddu.com
-branch:               source
+branch:               master
 
 # Jekyll source / destination
 source:               .
