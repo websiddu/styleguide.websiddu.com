@@ -64,7 +64,7 @@ limit_posts: 0
 
 # relative_permalinks: true
 
-# permalink:     none
+permalink:     none
 paginate_path: 'page:num'
 paginate: 10
 
@@ -100,7 +100,6 @@ redcloth:
 
 gems:
   - jekyll-assets
-  - jekyll-paginate
   - jekyll-archives
 
 #
