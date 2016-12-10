@@ -1,5 +1,5 @@
 $em-base: 13px;
-$primary-color: $blue !default;
+$primary-color: $primary !default;
 $text-direction: ltr;
 
 @function strip-unit($num) {
@@ -26,27 +26,27 @@ $text-direction: ltr;
 
 
 // We use these to control header font styles
-$header-font-family: "Roboto Mono", "Helvetica", Helvetica, Arial, sans-serif !default;
-$header-font-weight: 500 !default;
+$header-font-family: "Roboto Mono", "Inconsolata", "Helvetica", Helvetica, Arial, sans-serif !default;
+$header-font-weight: normal !default;
 $header-font-style: normal !default;
 $header-font-color: #222 !default;
 $header-line-height: 1.5 !default;
 $header-top-margin: .2em !default;
-$header-bottom-margin: .5em !default;
+$header-bottom-margin: .3em !default;
 $header-text-rendering: optimizeLegibility !default;
 
 // We use these to control header font sizes
-$h1-font-size: em-calc(45) !default;
-$h2-font-size: em-calc(35) !default;
-$h3-font-size: em-calc(30) !default;
-$h4-font-size: em-calc(22) !default;
+$h1-font-size: em-calc(32) !default;
+$h2-font-size: em-calc(27) !default;
+$h3-font-size: em-calc(22) !default;
+$h4-font-size: em-calc(18) !default;
 $h5-font-size: em-calc(16) !default;
 $h6-font-size: 1em !default;
 
 // These control how subheaders are styled.
 $subheader-line-height: 1.4 !default;
 $subheader-font-color: lighten($header-font-color, 30%) !default;
-$subheader-font-weight: 300 !default;
+$subheader-font-weight: 400 !default;
 $subheader-top-margin: .2em !default;
 $subheader-bottom-margin: .5em !default;
 
@@ -54,20 +54,22 @@ $subheader-bottom-margin: .5em !default;
 $small-font-size: 60% !default;
 $small-font-color: lighten($header-font-color, 30%) !default;
 
+// font-size: 1.25rem;
+//     line-height: 1.55;
+//     color: #A9ABAD;
+//     font-weight: 400;
+//     margin-bottom: 1rem;
+
 // We use these to style paragraphs
 $paragraph-font-family: inherit !default;
-$paragraph-font-weight: normal !default;
-$paragraph-font-size: 1.22em !default;
+$paragraph-font-weight: 400 !default;
+$paragraph-font-size: 1.25rem !default;
 $paragraph-line-height: 1.55 !default;
 $paragraph-margin-bottom: em-calc(20) !default;
 $paragraph-aside-font-size: em-calc(14) !default;
 $paragraph-aside-line-height: 1.35 !default;
 $paragraph-aside-font-style: italic !default;
 $paragraph-text-rendering: optimizeLegibility !default;
-
-// We use these to style <code> tags
-$code-font-family: Consolas, 'Liberation Mono', Courier, monospace !default;
-$code-font-weight: bold !default;
 
 // We use these to style anchors
 $anchor-text-decoration: none !default;
@@ -90,8 +92,9 @@ $definition-list-header-margin-bottom: .3em !default;
 $definition-list-margin-bottom: em-calc(12) !default;
 
 // We use these to style blockquotes
+$blockquote-font-family: $header-font-family;
 $blockquote-font-color: lighten($header-font-color, 30%) !default;
-$blockquote-padding: em-calc(9 20 0 19) !default;
+$blockquote-padding: em-calc(10 20 0 70) !default;
 $blockquote-border: 1px solid #ddd !default;
 $blockquote-cite-font-size: em-calc(13) !default;
 $blockquote-cite-font-color: lighten($header-font-color, 20%) !default;
@@ -130,7 +133,7 @@ $microformat-abbr-font-decoration: none !default;
 
 // These will throw a deprecation warning if used within a media query.
 %lead {
-  font-size: $paragraph-font-size + em-calc(3.5);
+  font-size: $paragraph-font-size;
   line-height: 1.6;
 }
 
@@ -166,6 +169,7 @@ $microformat-abbr-font-decoration: none !default;
     margin:0;
     padding:0;
     direction: $text-direction;
+    font-weight: 400;
   }
 
   /* Default Link Styles */
@@ -207,7 +211,8 @@ $microformat-abbr-font-decoration: none !default;
     margin-top: $header-top-margin;
     margin-bottom: $header-bottom-margin;
     line-height: $header-line-height;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    position: relative;
 
     small {
       font-size: $small-font-size;
@@ -216,10 +221,10 @@ $microformat-abbr-font-decoration: none !default;
     }
   }
 
-  h1 { font-size: $h1-font-size - em-calc(10); }
-  h2 { font-size: $h2-font-size - em-calc(10); }
-  h3 { font-size: $h3-font-size - em-calc(5); }
-  h4 { font-size: $h4-font-size - em-calc(5); }
+  h1 { font-size: $h1-font-size; }
+  h2 { font-size: $h2-font-size; }
+  h3 { font-size: $h3-font-size; }
+  h4 { font-size: $h4-font-size; }
   h5 { font-size: $h5-font-size; }
   h6 { font-size: $h6-font-size; }
 
@@ -252,19 +257,25 @@ $microformat-abbr-font-decoration: none !default;
   }
 
   code {
-    font-family: $code-font-family;
-    font-weight: $code-font-weight;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-rendering: geometricPrecision;
   }
 
   /* Lists */
   ul,
   ol,
   dl {
-    font-size: $paragraph-font-size;
+    font-size: $paragraph-font-size - 0.1rem;
     line-height: $paragraph-line-height;
     margin-bottom: $paragraph-margin-bottom;
     list-style-position: $list-style-position;
     font-family: $paragraph-font-family;
+    padding-left: 2rem;
+  }
+
+  ul {
+    list-style-type: inherit;
   }
 
   /* Unordered Lists */
@@ -273,6 +284,7 @@ $microformat-abbr-font-decoration: none !default;
       ul,
       ol {
         margin-bottom: 0;
+        font-size: $paragraph-font-size;
         font-size: 1em; /* Override nested font-size change */
       }
     }
@@ -318,21 +330,21 @@ $microformat-abbr-font-decoration: none !default;
     text-transform: none;
   }
 
+
   /* Blockquotes */
   blockquote {
     margin: 0 0 $paragraph-margin-bottom;
     padding: $blockquote-padding;
-    font-style: italic;
+    font-family: $blockquote-font-family;
     position: relative;
-    font-size: 1.1rem;
     &:before {
-      content: "\201C ";
+      content: "‟";
       position: absolute;
-      font-size: 40px;
-      left: -10px;
-      top: -1px;
+      font-size: 90px;
+      left: 18px;
+      top: -24px;
       padding: 0 10px 0 0;
-      color: #888;
+      color: rgba(136,136,136,0.2);
     }
 
     cite {
@@ -353,6 +365,7 @@ $microformat-abbr-font-decoration: none !default;
   blockquote p {
     line-height: $paragraph-line-height;
     color: $blockquote-font-color;
+    font-size: 1.15rem;
   }
 
   /* Microformats */
@@ -391,5 +404,3 @@ $microformat-abbr-font-decoration: none !default;
     h3 { font-size: $h3-font-size; }
     h4 { font-size: $h4-font-size; }
   }
-
-
