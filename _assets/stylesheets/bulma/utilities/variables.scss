@@ -26,8 +26,8 @@ $purple: hsl(271, 100%, 71%) !default;
 $red: hsl(348, 100%, 61%) !default;
 
 // Typography
-$family-sans-serif: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
-$family-monospace: "Inconsolata", "Consolas", "Monaco", monospace !default;
+$family-sans-serif: 'Puritan', "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+$family-monospace: "Monaco", "Inconsolata", "Consolas", "Monaco", monospace !default;
 
 $size-1: 48px !default;
 $size-2: 40px !default;
@@ -54,7 +54,7 @@ $speed: 86ms !default;
 ////////////////////////////////////////////////
 // 2. Primary colors
 
-$primary: #4A89DC !default;
+$primary: #304FFE !default;
 
 $info: $blue !default;
 $success: $green !default;
